@@ -65,12 +65,13 @@ sudo apt install ffmpeg      # Required for certain audio file formats
 ```bash
 pip install docling
 ```
+![Docling install Screenshot](/command_screenshots/1_install_docling.png)
 
 ### 2. Check Docling version
 ```bash
 docling --version
 ```
-![Docling install Screenshot](/command_screenshots/1_install_docling.png)
+![Docling Version Screenshot](command_screenshots/2_check_docling_version.png)
 
 ### 3. Default PDF conversion (Markdown output)
 ```bash
@@ -78,11 +79,15 @@ docling https://arxiv.org/pdf/2206.01062
 ```
 Fetches a remote arxiv research paper and converts it to Markdown using the default pipeline, including OCR model inference.
 
+![Docling default pdf conversion Screenshot](/command_screenshots/3_docling_default_pdf.png)
+
 ### 4. Convert with OCR disabled
 ```bash
 docling pytorch_conference.pdf --no-ocr
 ```
 Skips the OCR pipeline and reads directly from the PDF's native text layer.
+
+![Docling no ocr Screenshot](/command_screenshots/5_no_ocr_output.png)
 
 ### 5. Image to HTML
 ```bash
@@ -90,11 +95,15 @@ docling images_used/fedora_guidelines.png --from image --to html --output output
 ```
 Converts a PNG screenshot of the Fedora packaging guidelines to HTML.
 
+![Docling no ocr Screenshot](/command_screenshots/4_docling_pytorch_conf_ss.png)
+
 ### 6. PDF to JSON with embedded images
 ```bash
 docling pdfs_used/pytorch_conference.pdf --image-export-mode embedded --to json --output output_files/pytorch_conf_file/to_json/
 ```
 Exports to JSON with images embedded directly inside the output file as base64.
+
+![Docling no ocr Screenshot](/command_screenshots/7_pytorch_pdf_toJSON_embedded_images.png)
 
 ### 7. Table-focused JSON extraction
 ```bash
@@ -102,11 +111,15 @@ docling pdfs_used/rainfall.pdf --tables --to json --output output_files/rainfall
 ```
 Focuses processing on table structures and outputs to JSON.
 
+![Docling table focused Screenshot](/command_screenshots/8_focus_on_tables_from_rainfall_pdf.png)
+
 ### 8. Markdown with referenced image export
 ```bash
 docling pdfs_used/pytorch_conference.pdf --image-export-mode referenced --to md --output output_files/pytorch_conf_file/separate_image_export_mode/
 ```
 Exports images as separate files in an artifacts folder, with the Markdown output linking to them.
+
+![Docling separate image export Screenshot](/command_screenshots/9_referenced_image_export_mode.png)
 
 ### 9. Force OCR with profiling
 ```bash
@@ -114,11 +127,15 @@ docling pdfs_used/pytorch_conference.pdf --force-ocr --profiling --image-export-
 ```
 Forces OCR even on a born-digital PDF and enables profiling to measure processing time per stage.
 
+![Docling Force OCR with profiling Screenshot](/command_screenshots/15_force_ocr_with_profiling.png)
+
 ### 10. Audio transcription (ASR)
 ```bash
 docling https://cdn.bookey.app/audio/orig/20240215153159356_1.mp3 --asr-model whisper_base --output output_files/asr_file
 ```
 Transcribes an audio file using OpenAI's Whisper base model. Requires `pip install "docling[asr]"` and `ffmpeg`.
+
+![Docling asr audio transcription Screenshot](/command_screenshots/12_running_asr_whisper_base_model.png)
 
 ### 11. VLM pipeline on image-heavy PDF
 ```bash
@@ -126,11 +143,15 @@ docling pdfs_used/image_text.pdf --pipeline vlm --vlm-model smoldocling --num-th
 ```
 Uses the Vision Language Model pipeline with SmolDocling for richer understanding of image-heavy documents.
 
+![Docling no ocr Screenshot](/command_screenshots/13_vlm_pipeline_with_smoldocling_model_1.png)
+
 ### 12. VLM pipeline on scanned PDF
 ```bash
 docling pdfs_used/pdf_scanned_ocr.pdf --pipeline vlm --vlm-model smoldocling --num-threads 6 --image-export-mode referenced --output output_files/pdf_scanned_ocr_file/vlm_pipeline
 ```
 Applies VLM pipeline to a scanned (non-digital) PDF.
+
+![Docling no ocr Screenshot](/command_screenshots/14_vlm_pipeline_with_smoldocling_model_2.png)
 
 ---
 
