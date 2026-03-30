@@ -143,7 +143,7 @@ docling pdfs_used/image_text.pdf --pipeline vlm --vlm-model smoldocling --num-th
 ```
 Uses the Vision Language Model pipeline with SmolDocling for richer understanding of image-heavy documents.
 
-![Docling no ocr Screenshot](/command_screenshots/13_vlm_pipeline_with_smoldocling_model_1.png)
+![Docling VLM pipeline on image-heavy Screenshot](/command_screenshots/13_vlm_pipeline_with_smoldocling_model_1.png)
 
 ### 12. VLM pipeline on scanned PDF
 ```bash
@@ -151,7 +151,7 @@ docling pdfs_used/pdf_scanned_ocr.pdf --pipeline vlm --vlm-model smoldocling --n
 ```
 Applies VLM pipeline to a scanned (non-digital) PDF.
 
-![Docling no ocr Screenshot](/command_screenshots/14_vlm_pipeline_with_smoldocling_model_2.png)
+![Docling VLM pipeline on scanned PDF Screenshot](/command_screenshots/14_vlm_pipeline_with_smoldocling_model_2.png)
 
 ---
 
