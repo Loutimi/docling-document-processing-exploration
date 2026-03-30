@@ -21,8 +21,7 @@ fedora_internship/
 |   ├── 8_focus_on_tables_from_rainfall_pdf.png
 |   └── 15_force_ocr_with_profiling.png
 ├── images_used/                # Image inputs used for conversion
-│   ├── fedora_guidelines.png
-│   └── image_screenshot.png
+│   └── fedora_guidelines.png
 ├── output_files/               # All conversion outputs
 │   ├── asr_file/               # Audio transcription output
 │   ├── docling_default_file/   # Default dockling markdown conversion
