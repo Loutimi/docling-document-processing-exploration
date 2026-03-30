@@ -156,6 +156,24 @@ The VLM pipeline (`--pipeline vlm --vlm-model smoldocling`) is significantly mor
 ### ASR (Audio Transcription)
 Docling's ASR capability does not ship with the default installation — it requires `pip install "docling[asr]"` as a separate step. Additionally, certain audio formats require `ffmpeg` to be installed at the system level (`sudo apt install ffmpeg`). Once set up, the Whisper base model handled transcription cleanly.
 
+### CPU Hardware Random Number Generator Warning
+When running Docling with OCR enabled, the following warnings may appear:
+
+```
+WARNING: CPU random generator seem to be failing, disabling hardware random number generation
+WARNING: RDRND generated: 0xffffffff 0xffffffff 0xffffffff 0xffffffff
+```
+
+This warning indicates that the system attempted to use the CPU’s hardware-based random number generator (RDRAND), but it did not return valid values. As a result, the underlying libraries (used by OCR and model inference) automatically disable hardware randomness and fall back to a software-based random number generator. It does not interrupt or fail the document processing pipeline and it's common in in virtualized environments such as WSL.
+
+### Transformer Tokenization Warning
+
+```
+UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy.
+```
+
+This warning originates from the Transformers library used by Docling’s VLM pipeline. It indicates that a max_length parameter was set internally, but since padding is enabled without truncation, the maximum length constraint is not applied during tokenization. It does not affect the correctness of the output. It only indicates how input sequences are padded internally
+
 ---
 
 ## Key Takeaways
