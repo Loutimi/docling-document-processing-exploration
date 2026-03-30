@@ -211,5 +211,5 @@ This warning originates from the Transformers library used by Docling’s VLM pi
 ## Related
 
 - Blog post: [illuminous.hashnode.dev](https://illuminous.hashnode.dev)
-- Docling documentation: [ds4sd.github.io/docling](https://ds4sd.github.io/docling)
+- Docling documentation: [docling-project.github.io/docling/](https://docling-project.github.io/docling/)
 
