@@ -70,6 +70,7 @@ pip install docling
 ```bash
 docling --version
 ```
+![Docling install Screenshot](/command_screenshots/1_install_docling.png)
 
 ### 3. Default PDF conversion (Markdown output)
 ```bash
